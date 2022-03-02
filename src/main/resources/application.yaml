@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: demo03
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    open-in-view: false
+  profiles:
+    active: tomcat
+server:
+  servlet:
+    context-path: /demo03
+logging:
+  level:
+    web: debug
+---
+spring:
+  config:
+    activate:
+      on-profile: tomcat
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: demo03
+    password: Zaq12wsx.
+    name: demo03
+    url: jdbc:postgresql://localhost:5432/demo03
+---
+spring:
+  config:
+    activate:
+      on-profile: jboss
+  datasource:
+    jndi-name: java:jboss/datasources/demo03
