@@ -1,5 +1,5 @@
-FROM jboss-eap-7.3:alpine
-COPY --chown=jboss build/libs/demo03-0.0.1-SNAPSHOT.war /home/jboss/jboss-eap-7.3/standalone/deployments/demo03.war
+FROM jboss-eap-7.4:alpine
+COPY --chown=jboss build/libs/demo03-0.0.1-SNAPSHOT.war /home/jboss/jboss-eap-7.4/standalone/deployments/demo03.war
 
 ENV USE_JNDI "true"
 ENV JNDI "java:jboss/datasources/demo03"
